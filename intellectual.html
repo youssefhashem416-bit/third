@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#3b66f5">
+  <title>قسم الإعاقة الذهنية | معًا - عالم بلا حواجز</title>
+
+  <!-- Google Fonts: Cairo & Tajawal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/accessibility.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body>
+
+  <!-- الترويسة الموحدة -->
+  <header>
+    <a href="index.html" class="logo-wrapper" aria-label="العودة للرئيسية">
+      <div class="logo">
+        معًا <span class="heart">♥</span>
+      </div>
+      <span class="logo-badge">الإعاقة الذهنية</span>
+    </a>
+
+    <nav aria-label="شريط التنقل">
+      <a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a>
+      <a href="#lettersSec"><i class="fa-solid fa-font"></i> الحروف</a>
+      <a href="#numbersSec"><i class="fa-solid fa-arrow-down-1-9"></i> الأرقام</a>
+      <a href="#colorsSec"><i class="fa-solid fa-palette"></i> الألوان</a>
+      <a href="#quizSec"><i class="fa-solid fa-star"></i> الاختبار التفاعلي</a>
+      <a href="refresh.html"><i class="fa-solid fa-arrows-rotate"></i> مركز الريفريش</a>
+    </nav>
+
+    <!-- شريط أدوات سهولة الوصول السريع -->
+    <div class="a11y-quick-bar" role="toolbar" aria-label="أدوات الوصول السريع">
+      <button class="a11y-btn" onclick="A11y.changeFont(2)" title="تكبير الخط" aria-label="تكبير حجم الخط">
+        <i class="fa-solid fa-magnifying-glass-plus"></i> A+
+      </button>
+      <button class="a11y-btn" onclick="A11y.changeFont(-2)" title="تصغير الخط" aria-label="تصغير حجم الخط">
+        <i class="fa-solid fa-magnifying-glass-minus"></i> A-
+      </button>
+      <button class="a11y-btn" data-a11y="contrast" onclick="A11y.toggleContrast()" title="التباين الفائق" aria-label="تفعيل التباين الفائق">
+        <i class="fa-solid fa-circle-half-stroke"></i> تباين
+      </button>
+      <button class="a11y-btn" data-a11y="dark" onclick="A11y.toggleDarkMode()" title="الوضع الليلي" aria-label="تبديل الوضع الليلي">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button class="a11y-btn" data-a11y="ruler" onclick="A11y.toggleRuler()" title="مسطرة القراءة" aria-label="تفعيل مسطرة القراءة">
+        <i class="fa-solid fa-ruler-horizontal"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- القسم الترحيبي -->
+  <section class="hero animate-fade">
+    <div class="hero-tag">
+      <i class="fa-solid fa-brain"></i> تجربة تعليمية مبسطة وتفاعلية خطوة بخطوة
+    </div>
+    <h1>قسم <span class="highlight">الإعاقة الذهنية</span></h1>
+    <p>
+      رحلة تعليمية ممتعة قائمة على التكرار البصري والصوتي المحبب، لتعلم الحروف والأرقام والألوان وحل الألغاز البسيطة مع تشجيع دائم.
+    </p>
+    <div class="buttons" style="justify-content:center;">
+      <a href="index.html" class="btn btn-secondary">
+        <i class="fa-solid fa-arrow-right"></i> العودة للرئيسية
+      </a>
+      <a href="#lettersSec" class="btn btn-primary">
+        <i class="fa-solid fa-graduation-cap"></i> ابدأ بالتعلم الآن
+      </a>
+    </div>
+  </section>
+
+  <!-- المحتوى الرئيسي -->
+  <main class="container">
+
+    <!-- 1. الحروف العربية -->
+    <section class="panel animate-fade" id="lettersSec">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-font" style="color:var(--primary);"></i> 🔤 تعلم الحروف العربية</h2>
+        <span class="status-badge"><i class="fa-solid fa-volume-high"></i> اضغط لتسمع النطق والمثال</span>
+      </div>
+      <p class="lead-text">اضغط على أي حرف لتسمع اسمه ومثالاً عليه بصوت عربي واضح:</p>
+
+      <div class="cards-grid" id="lettersGrid">
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnLetter(this, 'ألف', 'أرنب', '🐰')">
+          <span class="emoji">🐰</span>
+          <h3>أ - ألف</h3>
+          <p>أرنب لطيف</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnLetter(this, 'باء', 'بطة', '🦆')">
+          <span class="emoji">🦆</span>
+          <h3>ب - باء</h3>
+          <p>بطة تسبح</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnLetter(this, 'تاء', 'تفاحة', '🍎')">
+          <span class="emoji">🍎</span>
+          <h3>ت - تاء</h3>
+          <p>تفاحة لذيذة</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnLetter(this, 'جيم', 'جمل', '🐪')">
+          <span class="emoji">🐪</span>
+          <h3>ج - جيم</h3>
+          <p>جمل صبور</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnLetter(this, 'دال', 'دب', '🐻')">
+          <span class="emoji">🐻</span>
+          <h3>د - دال</h3>
+          <p>دب قوي</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnLetter(this, 'سين', 'سمكة', '🐟')">
+          <span class="emoji">🐟</span>
+          <h3>س - سين</h3>
+          <p>سمكة تسبح</p>
+        </div>
+      </div>
+
+      <div class="result-box" id="letterResult" aria-live="polite">
+        <span><i class="fa-solid fa-lightbulb" style="margin-left:8px;"></i> اختر حرفًا لتبدأ الاستماع والمشاهدة.</span>
+      </div>
+    </section>
+
+    <!-- 2. الأرقام والعد -->
+    <section class="panel animate-fade" id="numbersSec">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-arrow-down-1-9" style="color:var(--primary);"></i> 🔢 تعلم الأرقام والعد</h2>
+        <span class="status-badge"><i class="fa-solid fa-calculator"></i> تدريب بصري على العد</span>
+      </div>
+      <p class="lead-text">تعلم الأرقام من خلال عد الأشياء الملونة المحببة:</p>
+
+      <div class="cards-grid" id="numbersGrid">
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnNumber(this, 1, 'واحد', 'تفاحة واحدة 🍎')">
+          <span class="emoji">🍎</span>
+          <h3>1 - واحد</h3>
+          <p>تفاحة واحدة</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnNumber(this, 2, 'اثنان', 'تفاحتان اثنتان 🍎🍎')">
+          <span class="emoji">🍎🍎</span>
+          <h3>2 - اثنان</h3>
+          <p>تفاحتان</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnNumber(this, 3, 'ثلاثة', 'ثلاث تفاحات 🍎🍎🍎')">
+          <span class="emoji">🍎🍎🍎</span>
+          <h3>3 - ثلاثة</h3>
+          <p>ثلاث تفاحات</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnNumber(this, 4, 'أربعة', 'أربع نجوم ذهبية ⭐⭐⭐⭐')">
+          <span class="emoji">⭐⭐⭐⭐</span>
+          <h3>4 - أربعة</h3>
+          <p>أربع نجوم</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnNumber(this, 5, 'خمسة', 'خمس كرات رياضية ⚽⚽⚽⚽⚽')">
+          <span class="emoji">⚽⚽⚽⚽⚽</span>
+          <h3>5 - خمسة</h3>
+          <p>خمس كرات</p>
+        </div>
+      </div>
+
+      <div class="result-box" id="numberResult" aria-live="polite">
+        <span><i class="fa-solid fa-hand-pointer" style="margin-left:8px;"></i> اضغط على أي بطاقة لتتعلم نطق الرقم والعد.</span>
+      </div>
+    </section>
+
+    <!-- 3. الألوان -->
+    <section class="panel animate-fade" id="colorsSec">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-palette" style="color:var(--primary);"></i> 🎨 تعلم الألوان الجميلة</h2>
+        <span class="status-badge"><i class="fa-solid fa-eye"></i> تمييز بصري وصوتي</span>
+      </div>
+      <p class="lead-text">اضغط على أي لون لمعرفة اسمه وكيف ننطقه:</p>
+
+      <div class="cards-grid" id="colorsGrid">
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnColor(this, 'الأحمر', '🔴')">
+          <span class="emoji">🔴</span>
+          <h3>أحمر</h3>
+          <p>مثل الفراولة والتفاح</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnColor(this, 'الأزرق', '🔵')">
+          <span class="emoji">🔵</span>
+          <h3>أزرق</h3>
+          <p>مثل السماء والبحر</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnColor(this, 'الأخضر', '🟢')">
+          <span class="emoji">🟢</span>
+          <h3>أخضر</h3>
+          <p>مثل أوراق الأشجار</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnColor(this, 'الأصفر', '🟡')">
+          <span class="emoji">🟡</span>
+          <h3>أصفر</h3>
+          <p>مثل شمس الصباح والموز</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnColor(this, 'البرتقالي', '🟠')">
+          <span class="emoji">🟠</span>
+          <h3>برتقالي</h3>
+          <p>مثل فاكهة البرتقال اللذيذة</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="IntellectualActivities.learnColor(this, 'البنفسجي', '🟣')">
+          <span class="emoji">🟣</span>
+          <h3>بنفسجي</h3>
+          <p>مثل زهرة البنفسج الجميلة</p>
+        </div>
+      </div>
+
+      <div class="result-box" id="colorResult" aria-live="polite">
+        <span><i class="fa-solid fa-paint-roller" style="margin-left:8px;"></i> اختر لونًا للتعرف عليه وسماع صوته.</span>
+      </div>
+    </section>
+
+    <!-- 4. اختبار تفاعلي ومكافآت -->
+    <section class="panel animate-fade" id="quizSec">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-star" style="color:var(--accent);"></i> 🧩 اختبر معلوماتك واربح النجوم</h2>
+        <div class="speaking-indicator">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="settings-box" style="text-align:center;">
+        <h3 id="questionText" style="font-size:1.4rem; color:var(--primary); margin-bottom:12px;">
+          كم عدد التفاحات الموجودة في الصورة؟
+        </h3>
+
+        <div id="questionDisplay" style="font-size:55px; margin:16px 0; letter-spacing:8px;">
+          🍎 🍎 🍎
+        </div>
+
+        <div id="quizOptions" class="buttons" style="justify-content:center; margin:20px 0;">
+          <!-- تولد الأزرار ديناميكياً بواسطة intellectual.js -->
+        </div>
+
+        <div class="result-box" id="quizResult" aria-live="polite" style="justify-content:center; font-size:1.15rem;">
+          اختر الإجابة الصحيحة بالضغط على أحد الأزرار أعلاه.
+        </div>
+
+        <div class="buttons" style="justify-content:center; margin-top:20px;">
+          <button class="btn btn-primary btn-lg" onclick="IntellectualActivities.nextQuestion()">
+            <span>السؤال التالي</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- الفوتر الموحد -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>معًا <span class="heart" style="color:#ef4444;">♥</span> عالم بلا حواجز</h3>
+        <p>قسم الإعاقة الذهنية — مصمم لتوفير أنشطة سهلة، ممتعة، ومحفزة للقدرات الإدراكية والتفكيرية.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>أقسام أخرى</h4>
+        <ul>
+          <li><a href="autism.html"><i class="fa-solid fa-angle-left"></i> اضطراب طيف التوحد</a></li>
+          <li><a href="visual.html"><i class="fa-solid fa-angle-left"></i> الإعاقة البصرية</a></li>
+          <li><a href="hearing.html"><i class="fa-solid fa-angle-left"></i> الإعاقة السمعية</a></li>
+          <li><a href="refresh.html"><i class="fa-solid fa-angle-left"></i> مركز الريفريش والتهيئة</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>أدوات سريعة</h4>
+        <ul>
+          <li><a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a></li>
+          <li><a href="#quizSec"><i class="fa-solid fa-gamepad"></i> الألعاب والاختبارات</a></li>
+          <li><a href="javascript:void(0)" onclick="A11y.resetSettings()"><i class="fa-solid fa-rotate-left"></i> استعادة الإعدادات الافتراضية</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>معًا - عالم بلا حواجز © 2026 | التعلم حق لكل إنسان.</p>
+      <p><i class="fa-solid fa-trophy" style="color:var(--accent);"></i> كل خطوة تخطوها هي إنجاز رائع!</p>
+    </div>
+  </footer>
+
+  <!-- المكتبات الخارجية -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- ملفات الجافاسكريبت المعيارية -->
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/speech.js"></script>
+  <script src="assets/js/accessibility.js"></script>
+  <script src="assets/js/intellectual.js"></script>
+
+</body>
+</html>

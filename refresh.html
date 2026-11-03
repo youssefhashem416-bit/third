@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#3b66f5">
+  <title>مركز الريفريش والتهيئة الشاملة | معًا - عالم بلا حواجز</title>
+
+  <!-- Google Fonts: Cairo & Tajawal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/accessibility.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body>
+
+  <!-- الترويسة الموحدة -->
+  <header>
+    <a href="index.html" class="logo-wrapper" aria-label="العودة للرئيسية">
+      <div class="logo">
+        معًا <span class="heart">♥</span>
+      </div>
+      <span class="logo-badge">مركز الريفريش</span>
+    </a>
+
+    <nav aria-label="شريط التنقل">
+      <a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a>
+      <a href="#resetSec"><i class="fa-solid fa-rotate-left"></i> إعادة الضبط</a>
+      <a href="#profilesSec"><i class="fa-solid fa-user-gear"></i> البروفايلات السريعة</a>
+      <a href="#voiceDiagSec"><i class="fa-solid fa-stethoscope"></i> تشخيص الصوت</a>
+      <a href="#systemSec"><i class="fa-solid fa-server"></i> صحة النظام</a>
+    </nav>
+
+    <!-- شريط أدوات سهولة الوصول السريع -->
+    <div class="a11y-quick-bar" role="toolbar" aria-label="أدوات الوصول السريع">
+      <button class="a11y-btn" onclick="A11y.changeFont(2)" title="تكبير الخط" aria-label="تكبير حجم الخط">
+        <i class="fa-solid fa-magnifying-glass-plus"></i> A+
+      </button>
+      <button class="a11y-btn" onclick="A11y.changeFont(-2)" title="تصغير الخط" aria-label="تصغير حجم الخط">
+        <i class="fa-solid fa-magnifying-glass-minus"></i> A-
+      </button>
+      <button class="a11y-btn" data-a11y="contrast" onclick="A11y.toggleContrast()" title="التباين الفائق" aria-label="تفعيل التباين الفائق">
+        <i class="fa-solid fa-circle-half-stroke"></i> تباين
+      </button>
+      <button class="a11y-btn" data-a11y="dark" onclick="A11y.toggleDarkMode()" title="الوضع الليلي" aria-label="تبديل الوضع الليلي">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button class="a11y-btn" data-a11y="ruler" onclick="A11y.toggleRuler()" title="مسطرة القراءة" aria-label="تفعيل مسطرة القراءة">
+        <i class="fa-solid fa-ruler-horizontal"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- القسم الترحيبي -->
+  <section class="hero animate-fade">
+    <div class="hero-tag">
+      <i class="fa-solid fa-arrows-rotate"></i> لوحة التحكم المركزية والتهيئة الفورية
+    </div>
+    <h1>مركز <span class="highlight">الريفريش والتهيئة</span> الاحترافي</h1>
+    <p>
+      لوحة متكاملة مخصصة للمعلمين، وأولياء الأمور، والممتحنين لإعادة ضبط الجلسات، وتشخيص محرك الصوت، وتفعيل بروفايلات الوصول بضغطة زر واحدة.
+    </p>
+    <div class="buttons" style="justify-content:center;">
+      <button class="btn btn-primary btn-lg" onclick="RefreshHub.fullReset()">
+        <i class="fa-solid fa-rotate-left"></i> إعادة ضبط شاملة للمنصة (Full Reset)
+      </button>
+      <button class="btn btn-secondary btn-lg" onclick="window.location.reload()">
+        <i class="fa-solid fa-arrows-rotate"></i> ريفريش فوري للصفحة (Reload)
+      </button>
+    </div>
+  </section>
+
+  <!-- المحتوى الرئيسي -->
+  <main class="container">
+
+    <!-- 1. إعادة الضبط السريعة -->
+    <section class="panel animate-fade" id="resetSec">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-rotate-left" style="color:var(--danger);"></i> ⚡ إعادة التعيين والريفريش الذكي</h2>
+        <span class="status-badge" style="background:#fee2e2; color:#b91c1c;">
+          <i class="fa-solid fa-triangle-exclamation"></i> تحكم مباشر في الجلسة
+        </span>
+      </div>
+      <p class="lead-text">
+        يمكنك تصفير ومسح كافة البيانات المخزنة محليًا (درجات الاختبارات، علامات جدول التوحد، وأحجام الخطوط المخصصة) للبدء مع طالب جديد:
+      </p>
+
+      <div class="buttons">
+        <button class="btn btn-danger btn-lg" onclick="RefreshHub.fullReset()">
+          <i class="fa-solid fa-trash-can"></i> مسح كامل البيانات وإعادة ضبط المنصة
+        </button>
+        <button class="btn btn-secondary btn-lg" onclick="A11y.resetSettings()">
+          <i class="fa-solid fa-sliders"></i> استعادة خيارات الوصول القياسية فقط
+        </button>
+      </div>
+    </section>
+
+    <!-- 2. بروفايلات سهولة الوصول الجاهزة (One-Click Profiles) -->
+    <section class="panel animate-fade" id="profilesSec">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-wand-magic-sparkles" style="color:var(--primary);"></i> 🎯 بروفايلات الوصول السريعة (Instant Profiles)</h2>
+        <span class="status-badge"><i class="fa-solid fa-bolt"></i> تفعيل فوري بنقرة واحدة</span>
+      </div>
+      <p class="lead-text">
+        اختر البروفايل الملائم لنوع الإعاقة لتطبيق كافة الإعدادات البصرية والصوتية المناسبة دفعة واحدة:
+      </p>
+
+      <div class="cards-grid">
+        <div class="interactive-card" tabindex="0" onclick="RefreshHub.applyProfile('visual')">
+          <span class="emoji">👁️</span>
+          <h3>بروفايل ضعاف البصر</h3>
+          <p>تكبير الخط للحد الأقصى (24px) + تفعيل التباين الفائق فوراً.</p>
+          <span class="btn btn-sm btn-primary" style="margin-top:10px;">تفعيل البروفايل</span>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="RefreshHub.applyProfile('autism')">
+          <span class="emoji">🧩</span>
+          <h3>بروفايل طيف التوحد</h3>
+          <p>ألوان هادئة ومريحة + وضع مظلم مهدئ + خط عسر القراءة المريح.</p>
+          <span class="btn btn-sm btn-primary" style="margin-top:10px;">تفعيل البروفايل</span>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="RefreshHub.applyProfile('hearing')">
+          <span class="emoji">🦻</span>
+          <h3>بروفايل الصم وضعاف السمع</h3>
+          <p>تفعيل مسطرة القراءة البصرية + تركيز كامل على التفاعل الضوئي.</p>
+          <span class="btn btn-sm btn-primary" style="margin-top:10px;">تفعيل البروفايل</span>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="RefreshHub.applyProfile('default')">
+          <span class="emoji">✨</span>
+          <h3>البروفايل القياسي</h3>
+          <p>استعادة الوضع الأصلي المتوازن والخط الافتراضي.</p>
+          <span class="btn btn-sm btn-secondary" style="margin-top:10px;">استعادة القياسي</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. مختبر الصوت وتشخيص الأصوات العربية -->
+    <section class="panel animate-fade" id="voiceDiagSec">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-stethoscope" style="color:var(--primary);"></i> 🎙️ مختبر وتشخيص محرك الصوت العربي</h2>
+        <div class="speaking-indicator">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <p class="lead-text">
+        فحص واختبار حزم الأصوات العربية المتوفرة على متصفحك ونظام التشغيل:
+      </p>
+
+      <div class="settings-box">
+        <h4 style="margin-bottom:12px; color:var(--primary);">الأصوات العربية المكتشفة في الجهاز:</h4>
+        <div id="voicesList" class="schedule-list" style="margin-bottom:20px;">
+          <p><i class="fa-solid fa-spinner fa-spin"></i> جاري فحص قائمة الأصوات...</p>
+        </div>
+
+        <div class="form-group">
+          <label for="customVoiceTest">تجربة قراءة جملة مخصصة:</label>
+          <input type="text" id="customVoiceTest" class="accessible-input" style="min-height:auto; padding:12px;" value="أهلاً بك في منصة معًا، محرك الصوت يعمل بأعلى جودة وكفاءة." aria-label="نص التجربة">
+        </div>
+
+        <div class="buttons">
+          <button class="btn btn-primary" onclick="SpeechEngine.speak(document.getElementById('customVoiceTest').value)">
+            <i class="fa-solid fa-play"></i> تجربة نطق الجملة
+          </button>
+          <button class="btn btn-stop" onclick="SpeechEngine.stop()">
+            <i class="fa-solid fa-stop"></i> إيقاف النطق
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. مختبر المؤثرات الصوتية (Web Audio API) -->
+    <section class="panel animate-fade">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-music" style="color:var(--primary);"></i> 🎵 فحص وتجربة المؤثرات الصوتية التخليقية</h2>
+        <span class="status-badge"><i class="fa-solid fa-shield-check"></i> تعمل بدون إنترنت وبلا ملفات صوتية</span>
+      </div>
+      <p class="lead-text">
+        اختبر النغمات والترددات المصممة لتعزيز التفاعل الحسي لدى الطلاب:
+      </p>
+
+      <div class="buttons">
+        <button class="btn btn-secondary" onclick="AppCore.playSound('click')">
+          <i class="fa-solid fa-mouse-pointer"></i> صوت النقر (Click)
+        </button>
+        <button class="btn btn-secondary" onclick="AppCore.playSound('pop')">
+          <i class="fa-solid fa-circle-dot"></i> صوت التحديد (Pop)
+        </button>
+        <button class="btn btn-success" onclick="AppCore.playSound('success')">
+          <i class="fa-solid fa-circle-check"></i> صوت النجاح (Success Chime)
+        </button>
+        <button class="btn btn-primary" onclick="AppCore.celebrate()">
+          <i class="fa-solid fa-party-horn"></i> موسيقى الاحتفال + كونفيتي (Celebrate)
+        </button>
+        <button class="btn btn-danger" onclick="AppCore.playSound('error')">
+          <i class="fa-solid fa-circle-xmark"></i> صوت التنبيه (Hint / Error)
+        </button>
+      </div>
+    </section>
+
+    <!-- 5. التحديث التلقائي الدوري (Auto-Refresh) -->
+    <section class="panel animate-fade">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-clock-rotate-left" style="color:var(--primary);"></i> ⏱️ ميزة التحديث الدوري التلقائي (Auto-Refresh Timer)</h2>
+      </div>
+      <p class="lead-text">
+        مفيدة لشاشات العرض التفاعلية في المراكز والمدارس لإعادة تنشيط الصفحة دورياً:
+      </p>
+
+      <div class="buttons">
+        <button class="btn btn-secondary" onclick="RefreshHub.toggleAutoRefresh(30)">
+          <i class="fa-solid fa-hourglass-start"></i> تفعيل كل 30 ثانية
+        </button>
+        <button class="btn btn-secondary" onclick="RefreshHub.toggleAutoRefresh(60)">
+          <i class="fa-solid fa-hourglass-start"></i> تفعيل كل دقيقة
+        </button>
+        <button class="btn btn-stop" onclick="RefreshHub.toggleAutoRefresh(0)">
+          <i class="fa-solid fa-ban"></i> تعطيل التحديث التلقائي
+        </button>
+      </div>
+
+      <div class="status-badge" id="autoRefreshStatus" style="margin-top:15px;">
+        التحديث التلقائي معطل حاليًا.
+      </div>
+    </section>
+
+    <!-- 6. تقرير صحة النظام والمتصفح -->
+    <section class="panel animate-fade" id="systemSec">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-shield-halved" style="color:var(--primary);"></i> 🛡️ تقرير تشخيص النظام وصحة المنصة</h2>
+      </div>
+
+      <div id="diagList" class="schedule-list">
+        <!-- تولد بواسطة refresh.js -->
+      </div>
+    </section>
+
+    <!-- انتقال سريع للأقسام التعليمية -->
+    <section class="panel animate-fade">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-compass" style="color:var(--primary);"></i> 🚀 الانتقال المباشر للأقسام التعليمية</h2>
+      </div>
+
+      <div class="buttons">
+        <a href="autism.html" class="btn btn-primary"><i class="fa-solid fa-puzzle-piece"></i> قسم طيف التوحد</a>
+        <a href="intellectual.html" class="btn btn-primary"><i class="fa-solid fa-brain"></i> قسم الإعاقة الذهنية</a>
+        <a href="visual.html" class="btn btn-primary"><i class="fa-solid fa-eye"></i> قسم الإعاقة البصرية</a>
+        <a href="hearing.html" class="btn btn-primary"><i class="fa-solid fa-ear-deaf"></i> قسم الإعاقة السمعية</a>
+        <a href="index.html" class="btn btn-secondary"><i class="fa-solid fa-house"></i> الصفحة الرئيسية</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- الفوتر الموحد -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>معًا <span class="heart" style="color:#ef4444;">♥</span> عالم بلا حواجز</h3>
+        <p>مركز الريفريش والتحكم الشامل — المنظومة المصممة لضمان موثوقية الأداء وسرعة التهيئة وتجربة مستخدم لا تشوبها شائبة.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>روابط الأقسام</h4>
+        <ul>
+          <li><a href="autism.html"><i class="fa-solid fa-angle-left"></i> طيف التوحد</a></li>
+          <li><a href="intellectual.html"><i class="fa-solid fa-angle-left"></i> الإعاقة الذهنية</a></li>
+          <li><a href="visual.html"><i class="fa-solid fa-angle-left"></i> الإعاقة البصرية</a></li>
+          <li><a href="hearing.html"><i class="fa-solid fa-angle-left"></i> الإعاقة السمعية</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>إجراءات فورية</h4>
+        <ul>
+          <li><a href="javascript:void(0)" onclick="RefreshHub.fullReset()"><i class="fa-solid fa-rotate-left"></i> إعادة ضبط شاملة</a></li>
+          <li><a href="javascript:void(0)" onclick="RefreshHub.applyProfile('visual')"><i class="fa-solid fa-eye"></i> بروفايل ضعاف البصر</a></li>
+          <li><a href="javascript:void(0)" onclick="RefreshHub.applyProfile('autism')"><i class="fa-solid fa-puzzle-piece"></i> بروفايل التوحد</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>معًا - عالم بلا حواجز © 2026 | جاهزية تامة وتحديث مستمر.</p>
+      <p><i class="fa-solid fa-check-double" style="color:var(--success);"></i> النظام يعمل بكفاءة 100%</p>
+    </div>
+  </footer>
+
+  <!-- المكتبات الخارجية -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- ملفات الجافاسكريبت المعيارية -->
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/speech.js"></script>
+  <script src="assets/js/accessibility.js"></script>
+  <script src="assets/js/refresh.js"></script>
+
+</body>
+</html>
+

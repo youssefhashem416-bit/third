@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#3b66f5">
+  <title>معًا - عالم بلا حواجز | المنصة التعليمية المتكاملة</title>
+
+  <!-- Google Fonts: Cairo & Tajawal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/accessibility.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body>
+
+  <!-- شريط الترويسة الموحد -->
+  <header>
+    <a href="index.html" class="logo-wrapper" aria-label="الصفحة الرئيسية لمنصة معًا">
+      <div class="logo">
+        معًا <span class="heart">♥</span>
+      </div>
+      <span class="logo-badge">عالم بلا حواجز</span>
+    </a>
+
+    <nav aria-label="شريط التنقل الرئيسي">
+      <a href="index.html" class="active"><i class="fa-solid fa-house"></i> الرئيسية</a>
+      <a href="#sections"><i class="fa-solid fa-shapes"></i> الأقسام التعليمية</a>
+      <a href="refresh.html"><i class="fa-solid fa-arrows-rotate"></i> مركز الريفريش</a>
+      <a href="#settings"><i class="fa-solid fa-universal-access"></i> إمكانية الوصول</a>
+    </nav>
+
+    <!-- شريط أدوات سهولة الوصول السريع -->
+    <div class="a11y-quick-bar" role="toolbar" aria-label="أدوات الوصول السريع">
+      <button class="a11y-btn" onclick="A11y.changeFont(2)" title="تكبير الخط" aria-label="تكبير حجم الخط">
+        <i class="fa-solid fa-magnifying-glass-plus"></i> A+
+      </button>
+      <button class="a11y-btn" onclick="A11y.changeFont(-2)" title="تصغير الخط" aria-label="تصغير حجم الخط">
+        <i class="fa-solid fa-magnifying-glass-minus"></i> A-
+      </button>
+      <button class="a11y-btn" data-a11y="contrast" onclick="A11y.toggleContrast()" title="التباين الفائق" aria-label="تفعيل التباين الفائق">
+        <i class="fa-solid fa-circle-half-stroke"></i> تباين
+      </button>
+      <button class="a11y-btn" data-a11y="dark" onclick="A11y.toggleDarkMode()" title="الوضع الليلي" aria-label="تبديل الوضع الليلي">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button class="a11y-btn" data-a11y="ruler" onclick="A11y.toggleRuler()" title="مسطرة القراءة" aria-label="تفعيل مسطرة القراءة">
+        <i class="fa-solid fa-ruler-horizontal"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- القسم الترحيبي (Hero Section) -->
+  <section class="hero animate-fade">
+    <div class="hero-tag">
+      <i class="fa-solid fa-hands-holding-heart"></i> بيئة تعليمية تفاعلية داعمة وشاملة
+    </div>
+    <h1>معًا — <span class="highlight">عالمٌ بلا حواجز</span></h1>
+    <p>
+      منصة تعليمية ورقمية متطورة تهدف إلى تمكين ودعم الأشخاص ذوي الإعاقة، من خلال تجربة تفاعلية ثرية وميسرة بالصوت والصورة، تراعي الفروق الفردية وتحقق الدمج الشامل.
+    </p>
+    <div class="buttons" style="justify-content:center;">
+      <a href="#sections" class="btn btn-primary btn-lg">
+        <i class="fa-solid fa-compass"></i> استكشف الأقسام التعليمية
+      </a>
+      <a href="refresh.html" class="btn btn-secondary btn-lg">
+        <i class="fa-solid fa-sliders"></i> مركز الريفريش والتهيئة
+      </a>
+    </div>
+  </section>
+
+  <!-- المحتوى الرئيسي -->
+  <main class="container">
+
+    <!-- أقسام المنصة الأربعة -->
+    <section id="sections" class="animate-fade">
+      <div class="section-title">
+        <h2><i class="fa-solid fa-layer-group" style="color:var(--primary);"></i> الأقسام التعليمية المتخصصة</h2>
+        <p>اختر القسم المناسب للبدء في الأنشطة التعليمية التفاعلية</p>
+      </div>
+
+      <div class="disability-grid">
+
+        <!-- طيف التوحد -->
+        <article class="disability-card">
+          <div class="emoji-badge">🧩</div>
+          <h3>اضطراب طيف التوحد</h3>
+          <p>
+            أنشطة مرئية وروتينية لتنظيم اليوم، والتعبير عن المشاعر والتواصل بالبطاقات المصورة (PECS) بدقة وسهولة.
+          </p>
+          <a class="btn btn-primary" href="autism.html" aria-label="الدخول إلى قسم اضطراب طيف التوحد">
+            <span>ابدأ الأنشطة الآن</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </article>
+
+        <!-- الإعاقة الذهنية -->
+        <article class="disability-card">
+          <div class="emoji-badge">🧠</div>
+          <h3>الإعاقة الذهنية</h3>
+          <p>
+            تجارب تعليمية مبسطة خطوة بخطوة لتعلم الحروف والأرقام والألوان مع اختبارات تفاعلية ومكافآت احتفالية.
+          </p>
+          <a class="btn btn-primary" href="intellectual.html" aria-label="الدخول إلى قسم الإعاقة الذهنية">
+            <span>ابدأ الأنشطة الآن</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </article>
+
+        <!-- الإعاقة البصرية -->
+        <article class="disability-card">
+          <div class="emoji-badge">👁️</div>
+          <h3>الإعاقة البصرية</h3>
+          <p>
+            محرك ناطق ذكي لقراءة أي نص صوتيًا باللغة العربية الفصحى مع تحكم مرن في السرعة وحجم الخط والتباين.
+          </p>
+          <a class="btn btn-primary" href="visual.html" aria-label="الدخول إلى قسم الإعاقة البصرية">
+            <span>ابدأ الأنشطة الآن</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </article>
+
+        <!-- الإعاقة السمعية -->
+        <article class="disability-card">
+          <div class="emoji-badge">🦻</div>
+          <h3>الإعاقة السمعية</h3>
+          <p>
+            تعلم الحروف والكلمات وجمل التواصل بالاعتماد على التحفيز البصري والرموز التعبيرية والتمارين المرئية.
+          </p>
+          <a class="btn btn-primary" href="hearing.html" aria-label="الدخول إلى قسم الإعاقة السمعية">
+            <span>ابدأ الأنشطة الآن</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- لوحة إعدادات سهولة الاستخدام -->
+    <section class="panel" id="settings">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-gear" style="color:var(--primary);"></i> إعدادات سهولة الاستخدام الشاملة</h2>
+        <span class="status-badge"><i class="fa-solid fa-floppy-disk"></i> تُحفظ تلقائيًا لكافة الصفحات</span>
+      </div>
+      <p class="lead-text">
+        قم بتخصيص مظهر وطريقة تصفح المنصة بما يلائم احتياجاتك البصرية والحركية.
+      </p>
+
+      <div class="settings-box">
+        <div class="form-group">
+          <label for="fontSize">
+            <span>حجم الخط الحالي:</span>
+            <span id="fontSizeDisplay" class="rate-display">16px</span>
+          </label>
+          <input type="range" id="fontSize" class="accessible-range" min="12" max="26" value="16" aria-label="التحكم في حجم خط الصفحة">
+        </div>
+
+        <div class="buttons">
+          <button class="btn btn-secondary" onclick="A11y.changeFont(2)">
+            <i class="fa-solid fa-plus"></i> تكبير الخط (A+)
+          </button>
+          <button class="btn btn-secondary" onclick="A11y.changeFont(-2)">
+            <i class="fa-solid fa-minus"></i> تصغير الخط (A-)
+          </button>
+          <button class="btn btn-dark" data-a11y="contrast" onclick="A11y.toggleContrast()">
+            <i class="fa-solid fa-circle-half-stroke"></i> تفعيل التباين الفائق
+          </button>
+          <button class="btn btn-secondary" data-a11y="dark" onclick="A11y.toggleDarkMode()">
+            <i class="fa-solid fa-moon"></i> الوضع الليلي
+          </button>
+          <button class="btn btn-secondary" data-a11y="dyslexia" onclick="A11y.toggleDyslexiaFont()">
+            <i class="fa-solid fa-font"></i> خط مريح للقراءة
+          </button>
+          <button class="btn btn-secondary" data-a11y="ruler" onclick="A11y.toggleRuler()">
+            <i class="fa-solid fa-ruler-horizontal"></i> مسطرة توجيه القراءة
+          </button>
+          <button class="btn btn-outline" onclick="A11y.resetSettings()">
+            <i class="fa-solid fa-rotate-left"></i> استعادة الإعدادات الافتراضية
+          </button>
+        </div>
+      </div>
+
+      <div class="tip-banner">
+        <i class="fa-solid fa-lightbulb" style="font-size:1.4rem;"></i>
+        <div>
+          <strong>نصيحة وصول:</strong>
+          يمكنك أيضًا الانتقال إلى <a href="refresh.html" style="color:inherit; font-weight:bold; text-decoration:underline;">مركز الريفريش والتهيئة</a> لتشخيص محرك الصوت، أو إعادة ضبط كافة الأنشطة والاختبارات بنقرة زر واحدة.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- الفوتر الموحد -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>معًا <span class="heart" style="color:#ef4444;">♥</span> عالم بلا حواجز</h3>
+        <p>
+          مشروع تخرج نوعي يهدف إلى تسخير التكنولوجيا الحديثة لخدمة وتمكين ذوي الاحتياجات الخاصة وتعزيز مبدأ تكافؤ الفرص في التعلم.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>الأقسام التعليمية</h4>
+        <ul>
+          <li><a href="autism.html"><i class="fa-solid fa-angle-left"></i> اضطراب طيف التوحد</a></li>
+          <li><a href="intellectual.html"><i class="fa-solid fa-angle-left"></i> الإعاقة الذهنية</a></li>
+          <li><a href="visual.html"><i class="fa-solid fa-angle-left"></i> الإعاقة البصرية</a></li>
+          <li><a href="hearing.html"><i class="fa-solid fa-angle-left"></i> الإعاقة السمعية</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>أدوات الإدارة والتحكم</h4>
+        <ul>
+          <li><a href="refresh.html"><i class="fa-solid fa-arrows-rotate"></i> مركز الريفريش والتهيئة</a></li>
+          <li><a href="index.html#settings"><i class="fa-solid fa-sliders"></i> خيارات سهولة الاستخدام</a></li>
+          <li><a href="javascript:void(0)" onclick="SpeechEngine.testVoice()"><i class="fa-solid fa-volume-high"></i> فحص الصوت العربي</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>معًا - عالم بلا حواجز © 2026 | التعلم حقٌ أساسي ومتاحٌ للجميع دون استثناء.</p>
+      <p><i class="fa-solid fa-universal-access"></i> مصمم وفق معايير WCAG 2.1 AAA</p>
+    </div>
+  </footer>
+
+  <!-- المكتبات الخارجية -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- ملفات الجافاسكريبت المعيارية -->
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/speech.js"></script>
+  <script src="assets/js/accessibility.js"></script>
+
+</body>
+</html>

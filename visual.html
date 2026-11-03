@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#3b66f5">
+  <title>قسم الإعاقة البصرية | معًا - عالم بلا حواجز</title>
+
+  <!-- Google Fonts: Cairo & Tajawal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/accessibility.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body>
+
+  <!-- الترويسة الموحدة -->
+  <header>
+    <a href="index.html" class="logo-wrapper" aria-label="العودة للرئيسية">
+      <div class="logo">
+        معًا <span class="heart">♥</span>
+      </div>
+      <span class="logo-badge">الإعاقة البصرية</span>
+    </a>
+
+    <nav aria-label="شريط التنقل">
+      <a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a>
+      <a href="#readerSec" class="active"><i class="fa-solid fa-volume-high"></i> قارئ النصوص</a>
+      <a href="#presetsSec"><i class="fa-solid fa-book-open"></i> نصوص جاهزة</a>
+      <a href="#voiceSec"><i class="fa-solid fa-sliders"></i> خيارات الصوت</a>
+      <a href="refresh.html"><i class="fa-solid fa-arrows-rotate"></i> مركز الريفريش</a>
+    </nav>
+
+    <!-- شريط أدوات سهولة الوصول السريع -->
+    <div class="a11y-quick-bar" role="toolbar" aria-label="أدوات الوصول السريع">
+      <button class="a11y-btn" onclick="A11y.changeFont(2)" title="تكبير الخط" aria-label="تكبير حجم الخط">
+        <i class="fa-solid fa-magnifying-glass-plus"></i> A+
+      </button>
+      <button class="a11y-btn" onclick="A11y.changeFont(-2)" title="تصغير الخط" aria-label="تصغير حجم الخط">
+        <i class="fa-solid fa-magnifying-glass-minus"></i> A-
+      </button>
+      <button class="a11y-btn" data-a11y="contrast" onclick="A11y.toggleContrast()" title="التباين الفائق" aria-label="تفعيل التباين الفائق">
+        <i class="fa-solid fa-circle-half-stroke"></i> تباين
+      </button>
+      <button class="a11y-btn" data-a11y="dark" onclick="A11y.toggleDarkMode()" title="الوضع الليلي" aria-label="تبديل الوضع الليلي">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button class="a11y-btn" data-a11y="ruler" onclick="A11y.toggleRuler()" title="مسطرة القراءة" aria-label="تفعيل مسطرة القراءة">
+        <i class="fa-solid fa-ruler-horizontal"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- القسم الترحيبي -->
+  <section class="hero animate-fade">
+    <div class="hero-tag">
+      <i class="fa-solid fa-eye-slash"></i> بيئة صوتية ذكية متوافقة مع قارئات الشاشة
+    </div>
+    <h1>قسم <span class="highlight">الإعاقة البصرية</span></h1>
+    <p>
+      استمع إلى أي نص مكتوب بصوت ناطق فصيح وواضح، مع إمكانية تكبير الخط إلى أقصى حد وتفعيل التباين الفائق لحماية وراحة العين.
+    </p>
+    <div class="buttons" style="justify-content:center;">
+      <a href="index.html" class="btn btn-secondary">
+        <i class="fa-solid fa-arrow-right"></i> العودة للرئيسية
+      </a>
+      <a href="#readerSec" class="btn btn-primary">
+        <i class="fa-solid fa-play"></i> افتح قارئ النصوص
+      </a>
+    </div>
+  </section>
+
+  <!-- المحتوى الرئيسي -->
+  <main class="container">
+
+    <!-- 1. قارئ النصوص المتقدم -->
+    <section class="panel animate-fade" id="readerSec">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-volume-high" style="color:var(--primary);"></i> 🔊 قارئ النصوص العربي الذكي</h2>
+        <div class="speaking-indicator">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <p class="lead-text">
+        اكتب أو الصق النص الذي ترغب في سماعه في الصندوق أدناه، ثم اضغط على زر الاستماع (أو اضغط Ctrl+Enter):
+      </p>
+
+      <textarea
+        id="readerText"
+        class="accessible-input"
+        rows="6"
+        placeholder="اكتب هنا ما تريد قراءته صوتيًا، أو اختر نصًا جاهزًا من الأسفل..."
+        aria-label="مربع إدخال النص للقراءة الصوتية"
+      ></textarea>
+
+      <div class="buttons">
+        <button class="btn btn-primary btn-lg" onclick="VisualReader.readInput()">
+          <i class="fa-solid fa-play"></i> استمع إلى النص الآن
+        </button>
+        <button class="btn btn-stop btn-lg" onclick="VisualReader.stopReading()">
+          <i class="fa-solid fa-stop"></i> إيقاف القراءة
+        </button>
+        <button class="btn btn-secondary btn-lg" onclick="VisualReader.clearText()">
+          <i class="fa-solid fa-eraser"></i> مسح النص
+        </button>
+      </div>
+
+      <div class="result-box" id="status" aria-live="polite">
+        <span><i class="fa-solid fa-circle-info" style="margin-left:8px;"></i> جاهز للاستماع. اكتب نصًا أو اختر نموذجًا.</span>
+      </div>
+
+      <div class="tip-banner">
+        <i class="fa-solid fa-keyboard" style="font-size:1.4rem;"></i>
+        <div>
+          <strong>اختصارات لوحة المفاتيح الميسرة:</strong>
+          اضغط <code>Ctrl + Enter</code> لبدء القراءة فورًا، واضغط <code>Escape</code> لإيقاف القراءة في أي لحظة.
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. نصوص ونماذج جاهزة -->
+    <section class="panel animate-fade" id="presetsSec">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-book-open" style="color:var(--primary);"></i> 📖 نصوص مختارة للاستماع والتجربة</h2>
+        <span class="status-badge"><i class="fa-solid fa-hand-pointer"></i> نقرة واحدة تكفي</span>
+      </div>
+      <p class="lead-text">اختر أحد النماذج المعدة مسبقًا للاستماع إلى تلاوتها:</p>
+
+      <div class="cards-grid presets-grid">
+        <div class="interactive-card" tabindex="0" onclick="VisualReader.usePreset(this, 'مرحبًا بك في موقع معًا. نحن هنا لمساعدتك على التعلم والتواصل بسهولة ويسر وبدون أي حواجز.')">
+          <span class="emoji">👋</span>
+          <h3>رسالة ترحيبية</h3>
+          <p>استمع لرسالة الترحيب</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="VisualReader.usePreset(this, 'التعلم رحلة ممتعة ومستمرة مدى الحياة. حاول كل يوم أن تكتسب معلومة جديدة تطور بها عقلك وقدراتك.')">
+          <span class="emoji">📚</span>
+          <h3>رسالة تعليمية</h3>
+          <p>كلمات محفزة عن المعرفة</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="VisualReader.usePreset(this, 'أنت قادر ومميز، ولديك طاقة وإرادة تصنع بها المستحيل. ثق بنفسك ولا تستسلم أبدًا.')">
+          <span class="emoji">⭐</span>
+          <h3>رسالة تشجيعية</h3>
+          <p>بث العزيمة والإيجابية</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="VisualReader.usePreset(this, 'يمكنك تكبير حجم الخط عبر شريط الأدوات العلوي، واستخدام قارئ الشاشة، وتعديل سرعة الصوت بما يناسبك.')">
+          <span class="emoji">ℹ️</span>
+          <h3>إرشادات سهولة الوصول</h3>
+          <p>طريقة استخدام ميزات الصفحة</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. إعدادات الصوت ومحرك النطق -->
+    <section class="panel animate-fade" id="voiceSec">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-sliders" style="color:var(--primary);"></i> 🎙️ إعدادات الصوت والتحكم بالسرعة</h2>
+      </div>
+
+      <div class="settings-box">
+        <div class="form-group">
+          <label for="speedRateSlider">
+            <span>سرعة تدفق الصوت والقراءة:</span>
+            <span id="rateValue" class="rate-display">0.85</span>
+          </label>
+          <input type="range" id="speedRateSlider" class="accessible-range" min="0.60" max="1.30" step="0.05" value="0.85" oninput="SpeechEngine.setRate(this.value)" aria-label="التحكم في سرعة القراءة الصوتية">
+        </div>
+
+        <div class="buttons">
+          <button class="btn btn-primary" onclick="SpeechEngine.testVoice('الصوت العربي يعمل الآن بشكل ممتاز ومريح للأذن.')">
+            <i class="fa-solid fa-play"></i> فحص جودة الصوت
+          </button>
+          <button class="btn btn-stop" onclick="VisualReader.stopReading()">
+            <i class="fa-solid fa-stop"></i> إيقاف الصوت
+          </button>
+        </div>
+
+        <div class="status-badge" id="voiceStatus" aria-live="polite">
+          <i class="fa-solid fa-microphone"></i> جاري فحص الأصوات العربية...
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- الفوتر الموحد -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>معًا <span class="heart" style="color:#ef4444;">♥</span> عالم بلا حواجز</h3>
+        <p>قسم الإعاقة البصرية — نؤمن بأن المعرفة حق بصري وصوتي للجميع دون قيود.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>أقسام أخرى</h4>
+        <ul>
+          <li><a href="autism.html"><i class="fa-solid fa-angle-left"></i> اضطراب طيف التوحد</a></li>
+          <li><a href="intellectual.html"><i class="fa-solid fa-angle-left"></i> الإعاقة الذهنية</a></li>
+          <li><a href="hearing.html"><i class="fa-solid fa-angle-left"></i> الإعاقة السمعية</a></li>
+          <li><a href="refresh.html"><i class="fa-solid fa-angle-left"></i> مركز الريفريش والتهيئة</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a></li>
+          <li><a href="javascript:void(0)" onclick="VisualReader.clearText()"><i class="fa-solid fa-eraser"></i> تفريغ صندوق النص</a></li>
+          <li><a href="javascript:void(0)" onclick="A11y.toggleContrast()"><i class="fa-solid fa-circle-half-stroke"></i> تبديل التباين الفائق</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>معًا - عالم بلا حواجز © 2026 | الاستماع متاح للجميع.</p>
+      <p><i class="fa-solid fa-headphones"></i> تجربة صوتية نقية وتفاعلية</p>
+    </div>
+  </footer>
+
+  <!-- المكتبات الخارجية -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- ملفات الجافاسكريبت المعيارية -->
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/speech.js"></script>
+  <script src="assets/js/accessibility.js"></script>
+  <script src="assets/js/visual.js"></script>
+
+</body>
+</html>

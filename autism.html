@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#3b66f5">
+  <title>قسم اضطراب طيف التوحد | معًا - عالم بلا حواجز</title>
+
+  <!-- Google Fonts: Cairo & Tajawal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/accessibility.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body>
+
+  <!-- الترويسة الموحدة -->
+  <header>
+    <a href="index.html" class="logo-wrapper" aria-label="العودة للرئيسية">
+      <div class="logo">
+        معًا <span class="heart">♥</span>
+      </div>
+      <span class="logo-badge">طيف التوحد</span>
+    </a>
+
+    <nav aria-label="شريط التنقل">
+      <a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a>
+      <a href="#activities" class="active"><i class="fa-solid fa-puzzle-piece"></i> الأنشطة التفاعلية</a>
+      <a href="#voiceSettings"><i class="fa-solid fa-microphone"></i> إعدادات الصوت</a>
+      <a href="refresh.html"><i class="fa-solid fa-arrows-rotate"></i> مركز الريفريش</a>
+    </nav>
+
+    <!-- شريط أدوات سهولة الوصول السريع -->
+    <div class="a11y-quick-bar" role="toolbar" aria-label="أدوات الوصول السريع">
+      <button class="a11y-btn" onclick="A11y.changeFont(2)" title="تكبير الخط" aria-label="تكبير حجم الخط">
+        <i class="fa-solid fa-magnifying-glass-plus"></i> A+
+      </button>
+      <button class="a11y-btn" onclick="A11y.changeFont(-2)" title="تصغير الخط" aria-label="تصغير حجم الخط">
+        <i class="fa-solid fa-magnifying-glass-minus"></i> A-
+      </button>
+      <button class="a11y-btn" data-a11y="contrast" onclick="A11y.toggleContrast()" title="التباين الفائق" aria-label="تفعيل التباين الفائق">
+        <i class="fa-solid fa-circle-half-stroke"></i> تباين
+      </button>
+      <button class="a11y-btn" data-a11y="dark" onclick="A11y.toggleDarkMode()" title="الوضع الليلي" aria-label="تبديل الوضع الليلي">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button class="a11y-btn" data-a11y="ruler" onclick="A11y.toggleRuler()" title="مسطرة القراءة" aria-label="تفعيل مسطرة القراءة">
+        <i class="fa-solid fa-ruler-horizontal"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- القسم الترحيبي -->
+  <section class="hero animate-fade">
+    <div class="hero-tag">
+      <i class="fa-solid fa-puzzle-piece"></i> بيئة منظمة ومريحة حسياً
+    </div>
+    <h1>قسم اضطراب <span class="highlight">طيف التوحد</span></h1>
+    <p>
+      مرحبًا بك في القسم التعليمي المخصص لدعم التعبير والتواصل، وتنظيم الأنشطة اليومية عبر جداول بصرية وبطاقات تفاعلية واضحة ومريحة.
+    </p>
+    <div class="buttons" style="justify-content:center;">
+      <a href="index.html" class="btn btn-secondary">
+        <i class="fa-solid fa-arrow-right"></i> العودة للرئيسية
+      </a>
+      <a href="#activities" class="btn btn-primary">
+        <i class="fa-solid fa-play"></i> ابدأ الأنشطة
+      </a>
+    </div>
+  </section>
+
+  <!-- المحتوى الرئيسي -->
+  <main class="container">
+
+    <!-- منطقة الأنشطة التفاعلية -->
+    <section id="activities" class="panel animate-fade">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-shapes" style="color:var(--primary);"></i> اختر النشاط التفاعلي</h2>
+        <div class="speaking-indicator" title="جاري التحدث">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <!-- أزرار التبويبات الثلاثة -->
+      <div class="tabs" role="tablist">
+        <button class="tab-btn active" role="tab" aria-selected="true" onclick="AutismActivities.showTab('schedule', this)">
+          <i class="fa-solid fa-calendar-day"></i> 📅 جدولي اليومي
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" onclick="AutismActivities.showTab('communication', this)">
+          <i class="fa-solid fa-comments"></i> 💬 بطاقات التواصل
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" onclick="AutismActivities.showTab('emotions', this)">
+          <i class="fa-solid fa-face-smile"></i> 😊 التعبير عن المشاعر
+        </button>
+      </div>
+
+      <!-- 1. الجدول اليومي البصري -->
+      <div id="schedule" class="activity-box active" role="tabpanel">
+        <div class="panel-header" style="border:none; padding-bottom:0;">
+          <div>
+            <h3>📅 جدول الأنشطة والروتين اليومي</h3>
+            <p style="color:var(--text-muted); font-size:0.95rem;">اضغط على أي مهمة عند إكمالها لوضع علامة الإنجاز وسماع تشجيع صوتي:</p>
+          </div>
+          <button class="btn btn-sm btn-secondary" onclick="AutismActivities.resetSchedule()">
+            <i class="fa-solid fa-rotate-left"></i> إعادة تعيين الجدول
+          </button>
+        </div>
+
+        <div class="schedule-list">
+          <div class="schedule-item" tabindex="0" role="button" aria-label="الاستيقاظ وغسل الوجه">
+            <div class="schedule-title-area">
+              <span class="schedule-check-btn"><i class="fa-solid fa-check"></i></span>
+              <span class="emoji">🌅</span>
+              <span class="schedule-text">الاستيقاظ وغسل الوجه والأسنان</span>
+            </div>
+            <span class="schedule-time-tag">الصباح</span>
+          </div>
+
+          <div class="schedule-item" tabindex="0" role="button" aria-label="تناول وجبة الإفطار">
+            <div class="schedule-title-area">
+              <span class="schedule-check-btn"><i class="fa-solid fa-check"></i></span>
+              <span class="emoji">🍳</span>
+              <span class="schedule-text">تناول وجبة إفطار صحية ولذيذة</span>
+            </div>
+            <span class="schedule-time-tag">الصباح</span>
+          </div>
+
+          <div class="schedule-item" tabindex="0" role="button" aria-label="وقت التعلم المدرسي">
+            <div class="schedule-title-area">
+              <span class="schedule-check-btn"><i class="fa-solid fa-check"></i></span>
+              <span class="emoji">📚</span>
+              <span class="schedule-text">وقت التعلم والأنشطة الذهنية</span>
+            </div>
+            <span class="schedule-time-tag">الظهر</span>
+          </div>
+
+          <div class="schedule-item" tabindex="0" role="button" aria-label="تناول وجبة الغداء">
+            <div class="schedule-title-area">
+              <span class="schedule-check-btn"><i class="fa-solid fa-check"></i></span>
+              <span class="emoji">🍽️</span>
+              <span class="schedule-text">تناول وجبة الغداء مع العائلة</span>
+            </div>
+            <span class="schedule-time-tag">بعد الظهر</span>
+          </div>
+
+          <div class="schedule-item" tabindex="0" role="button" aria-label="وقت اللعب والأنشطة الممتعة">
+            <div class="schedule-title-area">
+              <span class="schedule-check-btn"><i class="fa-solid fa-check"></i></span>
+              <span class="emoji">🎮</span>
+              <span class="schedule-text">وقت اللعب والمرح والراحة</span>
+            </div>
+            <span class="schedule-time-tag">العصر</span>
+          </div>
+
+          <div class="schedule-item" tabindex="0" role="button" aria-label="الاستعداد للنوم الهادئ">
+            <div class="schedule-title-area">
+              <span class="schedule-check-btn"><i class="fa-solid fa-check"></i></span>
+              <span class="emoji">🌙</span>
+              <span class="schedule-text">الاستعداد للنوم وقراءة قصة ممتعة</span>
+            </div>
+            <span class="schedule-time-tag">المساء</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. بطاقات التواصل المصورة (PECS) -->
+      <div id="communication" class="activity-box" role="tabpanel">
+        <h3>💬 بطاقات التعبير والتواصل الفوري</h3>
+        <p style="color:var(--text-muted); font-size:0.95rem;">اضغط على أي بطاقة وسيتم نطق الرسالة بصوت عربي نقي ومباشر:</p>
+
+        <div class="cards-grid">
+          <div class="interactive-card" tabindex="0" onclick="AutismActivities.selectMessage(this, 'أنا جائع، أريد تناول الطعام')">
+            <span class="emoji">🍎</span>
+            <h3>أنا جائع</h3>
+            <p>أريد تناول طعام صحي.</p>
+          </div>
+
+          <div class="interactive-card" tabindex="0" onclick="AutismActivities.selectMessage(this, 'أنا عطشان، أريد شرب الماء')">
+            <span class="emoji">💧</span>
+            <h3>أنا عطشان</h3>
+            <p>أحتاج إلى كوب من الماء.</p>
+          </div>
+
+          <div class="interactive-card" tabindex="0" onclick="AutismActivities.selectMessage(this, 'أريد اللعب، حان وقت المرح')">
+            <span class="emoji">⚽</span>
+            <h3>أريد اللعب</h3>
+            <p>حان وقت النشاط والمرح.</p>
+          </div>
+
+          <div class="interactive-card" tabindex="0" onclick="AutismActivities.selectMessage(this, 'أريد المساعدة، من فضلك ساعدني')">
+            <span class="emoji">🙋</span>
+            <h3>أريد المساعدة</h3>
+            <p>من فضلك أحتاج دعمك.</p>
+          </div>
+
+          <div class="interactive-card" tabindex="0" onclick="AutismActivities.selectMessage(this, 'أريد الراحة والهدوء')">
+            <span class="emoji">😴</span>
+            <h3>أريد الراحة</h3>
+            <p>أشعر بالتعب وأحتاج لهدوء.</p>
+          </div>
+
+          <div class="interactive-card" tabindex="0" onclick="AutismActivities.selectMessage(this, 'شكرًا لك على مساعدتك')">
+            <span class="emoji">❤️</span>
+            <h3>شكرًا لك</h3>
+            <p>أقدر مساعدتك ولطفك.</p>
+          </div>
+        </div>
+
+        <div class="result-box" id="messageResult" aria-live="polite">
+          <span><i class="fa-solid fa-hand-pointer" style="margin-left:8px;"></i> اضغط على أي بطاقة للتواصل ونطق محتواها فورياً.</span>
+        </div>
+
+        <div class="buttons">
+          <button class="btn btn-stop" onclick="SpeechEngine.stop()">
+            <i class="fa-solid fa-stop"></i> إيقاف الصوت
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. التعرف على المشاعر -->
+      <div id="emotions" class="activity-box" role="tabpanel">
+        <h3>😊 التعرف على المشاعر والتعبير عنها</h3>
+        <p style="color:var(--text-muted); font-size:0.95rem;">اختر الشعور الذي تشعر به الآن وسنساعدك في التعبير عنه:</p>
+
+        <div class="cards-grid">
+          <div class="interactive-card" tabindex="0" onclick="AutismActivities.selectEmotion(this, 'سعيد', 'أنا أشعر بالسعادة والبهجة اليوم!')">
+            <span class="emoji">😄</span>
+            <h3>سعيد</h3>
+            <p>أشعر بالسعادة والراحة.</p>
+          </div>
+
+          <div class="interactive-card" tabindex="0" onclick="AutismActivities.selectEmotion(this, 'حزين', 'أنا أشعر بالحزن، وأحتاج لعناق ومواساة.')">
+            <span class="emoji">😢</span>
+            <h3>حزين</h3>
+            <p>أحتاج لمن يسمعني ويواسيني.</p>
+          </div>
+
+          <div class="interactive-card" tabindex="0" onclick="AutismActivities.selectEmotion(this, 'غاضب', 'أنا أشعر بالغضب، وسآخذ نفسًا عميقًا لأهدأ.')">
+            <span class="emoji">😡</span>
+            <h3>غاضب</h3>
+            <p>سأتنفس بعمق لاستعادة هدوئي.</p>
+          </div>
+
+          <div class="interactive-card" tabindex="0" onclick="AutismActivities.selectEmotion(this, 'خائف', 'أنا أشعر بالخوف، وأحتاج أن أشعر بالأمان.')">
+            <span class="emoji">😨</span>
+            <h3>خائف</h3>
+            <p>أحتاج إلى البقاء بجانب من أثق بهم.</p>
+          </div>
+
+          <div class="interactive-card" tabindex="0" onclick="AutismActivities.selectEmotion(this, 'هادئ', 'أنا أشعر بالهدوء والسكينة والسلام.')">
+            <span class="emoji">😌</span>
+            <h3>هادئ</h3>
+            <p>عقلي وجسدي في حالة استرخاء.</p>
+          </div>
+
+          <div class="interactive-card" tabindex="0" onclick="AutismActivities.selectEmotion(this, 'متحمس', 'أنا متحمس ومستعد للنشاط والتعلم!')">
+            <span class="emoji">🤩</span>
+            <h3>متحمس</h3>
+            <p>لدي طاقة إيجابية كبيرة اليوم.</p>
+          </div>
+        </div>
+
+        <div class="result-box" id="emotionResult" aria-live="polite">
+          <span><i class="fa-solid fa-heart" style="margin-left:8px;"></i> اختر الشعور المناسب لك وسنقوم بنطقه ومساعدتك.</span>
+        </div>
+
+        <div class="buttons">
+          <button class="btn btn-stop" onclick="SpeechEngine.stop()">
+            <i class="fa-solid fa-stop"></i> إيقاف الصوت
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- لوحة إعدادات الصوت ومحرك النطق -->
+    <section class="panel" id="voiceSettings">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-sliders" style="color:var(--primary);"></i> إعدادات الصوت وسرعة النطق</h2>
+        <div class="speaking-indicator">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="settings-box">
+        <div class="form-group">
+          <label for="speechRate">
+            <span>سرعة الكلام المناسبة:</span>
+            <span id="rateValue" class="rate-display">0.85</span>
+          </label>
+          <input type="range" id="speechRate" class="accessible-range" min="0.60" max="1.30" step="0.05" value="0.85" oninput="SpeechEngine.setRate(this.value)" aria-label="سرعة النطق">
+        </div>
+
+        <div class="buttons">
+          <button class="btn btn-primary" onclick="SpeechEngine.testVoice('مرحبًا بك في قسم التوحد. الصوت يعمل بهدوء ووضوح.')">
+            <i class="fa-solid fa-play"></i> تجربة الصوت
+          </button>
+          <button class="btn btn-stop" onclick="SpeechEngine.stop()">
+            <i class="fa-solid fa-stop"></i> إيقاف الصوت
+          </button>
+        </div>
+
+        <div class="status-badge" id="voiceStatus" aria-live="polite">
+          <i class="fa-solid fa-circle-notch fa-spin"></i> جاري تهيئة الصوت العربي...
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- الفوتر الموحد -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>معًا <span class="heart" style="color:#ef4444;">♥</span> عالم بلا حواجز</h3>
+        <p>قسم اضطراب طيف التوحد — صمم خصيصًا ليمنح أطفالنا بيئة داعمة، هادئة، وسهلة الفهم والتفاعل.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>أقسام أخرى</h4>
+        <ul>
+          <li><a href="intellectual.html"><i class="fa-solid fa-angle-left"></i> الإعاقة الذهنية</a></li>
+          <li><a href="visual.html"><i class="fa-solid fa-angle-left"></i> الإعاقة البصرية</a></li>
+          <li><a href="hearing.html"><i class="fa-solid fa-angle-left"></i> الإعاقة السمعية</a></li>
+          <li><a href="refresh.html"><i class="fa-solid fa-angle-left"></i> مركز الريفريش والتهيئة</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html"><i class="fa-solid fa-house"></i> الصفحة الرئيسية</a></li>
+          <li><a href="javascript:void(0)" onclick="AutismActivities.resetSchedule()"><i class="fa-solid fa-rotate-left"></i> تصفير جدول المهام</a></li>
+          <li><a href="javascript:void(0)" onclick="A11y.resetSettings()"><i class="fa-solid fa-universal-access"></i> استعادة إعدادات الوصول</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>معًا - عالم بلا حواجز © 2026 | التعلم حق للجميع.</p>
+      <p><i class="fa-solid fa-heart"></i> مع تمنياتنا بتجربة تعليمية ملهمة وممتعة.</p>
+    </div>
+  </footer>
+
+  <!-- المكتبات الخارجية -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- ملفات الجافاسكريبت المعيارية -->
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/speech.js"></script>
+  <script src="assets/js/accessibility.js"></script>
+  <script src="assets/js/autism.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#3b66f5">
+  <title>قسم الإعاقة السمعية | معًا - عالم بلا حواجز</title>
+
+  <!-- Google Fonts: Cairo & Tajawal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/accessibility.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body>
+
+  <!-- الترويسة الموحدة -->
+  <header>
+    <a href="index.html" class="logo-wrapper" aria-label="العودة للرئيسية">
+      <div class="logo">
+        معًا <span class="heart">♥</span>
+      </div>
+      <span class="logo-badge">الإعاقة السمعية</span>
+    </a>
+
+    <nav aria-label="شريط التنقل">
+      <a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a>
+      <a href="#lettersSec"><i class="fa-solid fa-font"></i> الحروف</a>
+      <a href="#wordsSec"><i class="fa-solid fa-images"></i> الكلمات المصورة</a>
+      <a href="#phrasesSec"><i class="fa-solid fa-comments"></i> التواصل البصري</a>
+      <a href="#quizSec"><i class="fa-solid fa-trophy"></i> التدريبات</a>
+      <a href="refresh.html"><i class="fa-solid fa-arrows-rotate"></i> مركز الريفريش</a>
+    </nav>
+
+    <!-- شريط أدوات سهولة الوصول السريع -->
+    <div class="a11y-quick-bar" role="toolbar" aria-label="أدوات الوصول السريع">
+      <button class="a11y-btn" onclick="A11y.changeFont(2)" title="تكبير الخط" aria-label="تكبير حجم الخط">
+        <i class="fa-solid fa-magnifying-glass-plus"></i> A+
+      </button>
+      <button class="a11y-btn" onclick="A11y.changeFont(-2)" title="تصغير الخط" aria-label="تصغير حجم الخط">
+        <i class="fa-solid fa-magnifying-glass-minus"></i> A-
+      </button>
+      <button class="a11y-btn" data-a11y="contrast" onclick="A11y.toggleContrast()" title="التباين الفائق" aria-label="تفعيل التباين الفائق">
+        <i class="fa-solid fa-circle-half-stroke"></i> تباين
+      </button>
+      <button class="a11y-btn" data-a11y="dark" onclick="A11y.toggleDarkMode()" title="الوضع الليلي" aria-label="تبديل الوضع الليلي">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button class="a11y-btn" data-a11y="ruler" onclick="A11y.toggleRuler()" title="مسطرة القراءة" aria-label="تفعيل مسطرة القراءة">
+        <i class="fa-solid fa-ruler-horizontal"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- القسم الترحيبي -->
+  <section class="hero animate-fade">
+    <div class="hero-tag">
+      <i class="fa-solid fa-eye"></i> بيئة بصرية تفاعلية مع إشارات بصرية محفزة
+    </div>
+    <h1>قسم <span class="highlight">الإعاقة السمعية</span></h1>
+    <p>
+      تواصل وتعلم بكل يسر عبر الأنشطة المصورة والرموز الواضحة، مع مؤثرات ضوئية تفاعلية تدعم الاستيعاب السريع والتعليم البصري الشامل.
+    </p>
+    <div class="buttons" style="justify-content:center;">
+      <a href="index.html" class="btn btn-secondary">
+        <i class="fa-solid fa-arrow-right"></i> العودة للرئيسية
+      </a>
+      <a href="#lettersSec" class="btn btn-primary">
+        <i class="fa-solid fa-play"></i> ابدأ الاستكشاف البصري
+      </a>
+    </div>
+  </section>
+
+  <!-- المحتوى الرئيسي -->
+  <main class="container">
+
+    <!-- 1. تعلم الحروف العربية بصرياً -->
+    <section class="panel animate-fade" id="lettersSec">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-font" style="color:var(--primary);"></i> 🔤 تعلم الحروف العربية بالرموز</h2>
+        <span class="status-badge"><i class="fa-solid fa-eye"></i> بطاقات بصرية فائقة الوضوح</span>
+      </div>
+      <p class="lead-text">اضغط على أي بطاقة لعرض تفاصيل الحرف مع وميض بصري تفاعلي:</p>
+
+      <div class="cards-grid">
+        <div class="interactive-card" tabindex="0" onclick="HearingActivities.selectItem(this, 'ألف', 'حرف الألف، ومثاله أرنب')">
+          <span class="emoji">أ</span>
+          <h3>ألف</h3>
+          <p>أرنب 🐰</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="HearingActivities.selectItem(this, 'باء', 'حرف الباء، ومثاله بطة')">
+          <span class="emoji">ب</span>
+          <h3>باء</h3>
+          <p>بطة 🦆</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="HearingActivities.selectItem(this, 'تاء', 'حرف التاء، ومثاله تفاحة')">
+          <span class="emoji">ت</span>
+          <h3>تاء</h3>
+          <p>تفاحة 🍎</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="HearingActivities.selectItem(this, 'ثاء', 'حرف الثاء، ومثاله ثعلب')">
+          <span class="emoji">ث</span>
+          <h3>ثاء</h3>
+          <p>ثعلب 🦊</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="HearingActivities.selectItem(this, 'جيم', 'حرف الجيم، ومثاله جمل')">
+          <span class="emoji">ج</span>
+          <h3>جيم</h3>
+          <p>جمل 🐪</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="HearingActivities.selectItem(this, 'حاء', 'حرف الحاء، ومثاله حصان')">
+          <span class="emoji">ح</span>
+          <h3>حاء</h3>
+          <p>حصان 🐎</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. الكلمات المصورة -->
+    <section class="panel animate-fade" id="wordsSec">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-images" style="color:var(--primary);"></i> 🖼️ قاموس الكلمات المصورة</h2>
+        <span class="status-badge"><i class="fa-solid fa-shapes"></i> ربط الكلمة بالصورة والرمز</span>
+      </div>
+      <p class="lead-text">تعرف على الكلمات من خلال الصور الدلالية البسيطة والمباشرة:</p>
+
+      <div class="cards-grid">
+        <div class="interactive-card" tabindex="0" onclick="HearingActivities.selectItem(this, 'تفاحة', 'هذه تفاحة حمراء لذيذة')">
+          <span class="emoji">🍎</span>
+          <h3>تفاحة</h3>
+          <p>هذه تفاحة حمراء وطازجة.</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="HearingActivities.selectItem(this, 'قطة', 'هذه قطة أليفة وجميلة')">
+          <span class="emoji">🐱</span>
+          <h3>قطة</h3>
+          <p>هذه قطة صغيرة ومحبوبة.</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="HearingActivities.selectItem(this, 'منزل', 'هذا منزل دافئ وجميل')">
+          <span class="emoji">🏠</span>
+          <h3>منزل</h3>
+          <p>هذا بيت دافئ يجمع الأسرة.</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="HearingActivities.selectItem(this, 'شجرة', 'هذه شجرة خضراء ومثمرة')">
+          <span class="emoji">🌳</span>
+          <h3>شجرة</h3>
+          <p>شجرة خضراء ومثمرة في الحديقة.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. جمل التواصل البصري -->
+    <section class="panel animate-fade" id="phrasesSec">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-comments" style="color:var(--primary);"></i> 💬 جمل التواصل اليومي السريعة</h2>
+        <span class="status-badge"><i class="fa-solid fa-hands-asl-interpreting"></i> تعبير بصري واضح</span>
+      </div>
+      <p class="lead-text">بطاقات جاهزة للتواصل ومشاركتها مع المحيطين بك:</p>
+
+      <div class="cards-grid">
+        <div class="interactive-card" tabindex="0" onclick="HearingActivities.selectItem(this, 'مرحبًا', 'مرحبًا بك، يسعدني لقاؤك')">
+          <span class="emoji">👋</span>
+          <h3>مرحبًا</h3>
+          <p>أهلًا وسهلًا بك.</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="HearingActivities.selectItem(this, 'شكرًا', 'شكرًا جزيلاً لك على دعمك')">
+          <span class="emoji">🙏</span>
+          <h3>شكرًا</h3>
+          <p>أشكرك على تعاونك معي.</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="HearingActivities.selectItem(this, 'أحتاج مساعدة', 'لو سمحت، هل يمكنك مساعدتي؟')">
+          <span class="emoji">❓</span>
+          <h3>أحتاج مساعدة</h3>
+          <p>من فضلك أحتاج إلى عونك.</p>
+        </div>
+
+        <div class="interactive-card" tabindex="0" onclick="HearingActivities.selectItem(this, 'موافق', 'نعم، أنا موافق تمامًا')">
+          <span class="emoji">👍</span>
+          <h3>موافق</h3>
+          <p>نعم، فكرة رائعة وأنا أوافق.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. اختبر معلوماتك -->
+    <section class="panel animate-fade" id="quizSec">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-trophy" style="color:var(--accent);"></i> 🧠 التدريب البصري التفاعلي</h2>
+      </div>
+
+      <div class="settings-box" style="text-align:center;">
+        <h3 style="font-size:1.3rem; color:var(--primary);">ما اسم الفاكهة الموضحة في الصورة؟</h3>
+
+        <div style="font-size:75px; margin:20px 0;" class="animate-bounce-soft">
+          🍎
+        </div>
+
+        <div class="buttons" style="justify-content:center;">
+          <button class="btn btn-secondary btn-lg" onclick="HearingActivities.checkAnswer('موز')">موز 🍌</button>
+          <button class="btn btn-secondary btn-lg" onclick="HearingActivities.checkAnswer('تفاحة')">تفاحة 🍎</button>
+          <button class="btn btn-secondary btn-lg" onclick="HearingActivities.checkAnswer('برتقال')">برتقال 🍊</button>
+        </div>
+
+        <div class="result-box" id="quizResult" aria-live="polite" style="justify-content:center; margin-top:20px;">
+          اختر البطاقة المطابقة لرمز الفاكهة في الأعلى.
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ميزة تحويل النص إلى كلام (إضافية واختيارية) -->
+    <section class="panel animate-fade">
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-keyboard" style="color:var(--primary);"></i> 📝 كتابة جملة وتحويلها إلى كلام</h2>
+        <div class="speaking-indicator">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <p class="lead-text">
+        يمكنك كتابة رسالة هنا ليتم نطقها للأشخاص السامعين المحيطين بك:
+      </p>
+
+      <textarea
+        id="speechText"
+        class="accessible-input"
+        rows="4"
+        placeholder="اكتب هنا الرسالة التي تود نطقها لمن حولك..."
+        aria-label="اكتب جملة ليتم نطقها"
+      ></textarea>
+
+      <div class="buttons">
+        <button class="btn btn-primary" onclick="HearingActivities.readCustomText()">
+          <i class="fa-solid fa-volume-high"></i> انطق الرسالة الآن
+        </button>
+        <button class="btn btn-stop" onclick="SpeechEngine.stop()">
+          <i class="fa-solid fa-stop"></i> إيقاف الصوت
+        </button>
+      </div>
+
+      <div class="status-badge" id="speechStatus" aria-live="polite">
+        <i class="fa-solid fa-info-circle"></i> يمكنك استخدام هذه الخاصية للتخاطب المباشر مع الآخرين.
+      </div>
+    </section>
+
+  </main>
+
+  <!-- الفوتر الموحد -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>معًا <span class="heart" style="color:#ef4444;">♥</span> عالم بلا حواجز</h3>
+        <p>قسم الإعاقة السمعية — لغة العيون والتواصل البصري الذكي تقرب المسافات وتخلق التفاهم.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>أقسام أخرى</h4>
+        <ul>
+          <li><a href="autism.html"><i class="fa-solid fa-angle-left"></i> اضطراب طيف التوحد</a></li>
+          <li><a href="intellectual.html"><i class="fa-solid fa-angle-left"></i> الإعاقة الذهنية</a></li>
+          <li><a href="visual.html"><i class="fa-solid fa-angle-left"></i> الإعاقة البصرية</a></li>
+          <li><a href="refresh.html"><i class="fa-solid fa-angle-left"></i> مركز الريفريش والتهيئة</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a></li>
+          <li><a href="#quizSec"><i class="fa-solid fa-gamepad"></i> التمارين التفاعلية</a></li>
+          <li><a href="javascript:void(0)" onclick="A11y.resetSettings()"><i class="fa-solid fa-universal-access"></i> استعادة الإعدادات الافتراضية</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>معًا - عالم بلا حواجز © 2026 | التعلم حق للجميع.</p>
+      <p><i class="fa-solid fa-eye"></i> تواصل بصري سلس ومتكامل</p>
+    </div>
+  </footer>
+
+  <!-- المكتبات الخارجية -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- ملفات الجافاسكريبت المعيارية -->
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/speech.js"></script>
+  <script src="assets/js/accessibility.js"></script>
+  <script src="assets/js/hearing.js"></script>
+
+</body>
+</html>
